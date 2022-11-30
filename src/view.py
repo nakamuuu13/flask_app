@@ -9,8 +9,11 @@ app = Flask(__name__)
 # ルートディレクトリにアクセスした場合の挙動
 @app.route("/")
 def index():
-    #return "Hello world!"
-    return render_template("index.html")
+    # DBから以下の変数を読み込んできたと仮定
+    title_ = "ようこそ"
+    message_ = "HTV デザインパターンで Webアプリ作成"
+
+    return render_template("index.html", title=title_, message=message_)
 
 if __name__ == "__main__":
     app.run()
